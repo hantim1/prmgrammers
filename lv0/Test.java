@@ -3,29 +3,39 @@ package lv0;
 import java.util.Arrays;
 
 public class Test {
-
+	
 	 
-	 public static String[] solution(String my_str, int n) {
-		 String[] answer = new String [(int)(Math.ceil(my_str.length()/(n+.0)))];
-	        for(int i = 0; i <(int)(Math.ceil(my_str.length()/(n+.0))); i++){
-	            if(i == (int)(Math.ceil(my_str.length()/(n+.0)))-1){
-	               answer[i] = my_str.substring(i*n); 
+	 public static int[] solution(int n, int[] numlist) {
+	        int[] answer = {};
+	        int length=0;
+	        for(int i = 0; i < numlist.length; i++){
+	           
+	        	if(numlist[i] %n == 0){
+	               length++;
 	            }
-	            else{
-	                answer[i] = my_str.substring(i*n,i*n+n);
-	            }  }
+	        }
+	        answer = new int[length];
+	        int k = 0;
+	        for(int i  = 0; i< numlist.length; i++) {
+	        	
+	        	if(numlist[i] %n == 0) {
+	        		answer[k] = numlist[i];
+	        		k++;
+	        	}
+	        }
 	        return answer;
-        
+	    }
 
-   	}
 	 
 	public static void main(String[] args) {
-		String A = "hello";
-		String B = "ohell";
+		String str = "AVCE";
+		String [] arr = new String [str.length()];
 		
-		System.out.println(Arrays.toString(solution(A,2)));
-		System.out.println(Math.ceil(7/(2+.0)));
-		
+		arr[0] = str.substring(0,1);
+		arr[1] = str.substring(1,2);
+		arr[2] = str.substring(2,3);
+		arr[3] = str.substring(3);
+	    System.out.println(Arrays.toString(arr));   
 	}
 
 }
