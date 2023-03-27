@@ -20,10 +20,7 @@ public class NumSearch {
 	        	if(i==arr.length-1 && arr[i]!=k) {
 	        		answer =-1;
 	        	}
-	        	     		
-	        	
 	        }
-	        
 	        return answer;
 	       
 	    }
